@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+#content{padding: 10px 20px;font-size: 16px;}
+</style>
+<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+</head>
+<body>
+	<xmp id="content">
+		
+	</xmp>
+</body>
+<script type="text/javascript">
+var href = window.location.href;
+var i = href.indexOf('?') + 1;
+var docId = href.substring(i);
+$.post('/getDocument',{'docId': docId},function(data){
+	$("#content").html(data.contents);
+	$('title').html(data.name);
+},'json');
+</script>
+</html>

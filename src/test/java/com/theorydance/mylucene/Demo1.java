@@ -41,7 +41,7 @@ public class Demo1 {
 		String text = "This is the text to be indexed.";
 		doc.add(new Field("fieldname", text, TextField.TYPE_STORED));
 //		writer.addDocument(doc);
-		Term term = new Term("fieldname", "hello text");
+		Term term = new Term("fieldname", "text");
 		System.out.println(term.text());
 		writer.updateDocument(term, doc);
 		writer.close();		
@@ -52,7 +52,7 @@ public class Demo1 {
 		// parse a simple query that searches for "text":
 		QueryParser parser = new QueryParser("fieldname", analyzer);
 		// QueryParser parser = new MultiFieldQueryParser(new String[]{"fieldname"}, analyzer);
-		Query query = parser.parse("text");
+		Query query = parser.parse("index");
 		
 		ScoreDoc[] hits = searcher.search(query, 1000).scoreDocs;
 		for (int i = 0; i < hits.length; i++) {

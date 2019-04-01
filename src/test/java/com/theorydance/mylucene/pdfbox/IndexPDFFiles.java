@@ -32,6 +32,7 @@ import org.apache.lucene.index.IndexWriterConfig.OpenMode;
 import org.apache.lucene.index.Term;
 import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.FSDirectory;
+import org.junit.Test;
 
 /**
  * Index all pdf files under a directory.
@@ -41,10 +42,7 @@ import org.apache.lucene.store.FSDirectory;
  * <p>
  * It's based on a demo provided by the lucene project.
  */
-public final class IndexPDFFiles
-{
-
-    private IndexPDFFiles(){}
+public final class IndexPDFFiles {
 
     /**
      * Index all text files under a directory.
@@ -227,4 +225,14 @@ public final class IndexPDFFiles
             }
         }
     }
+
+    @Test
+    public void testUid() throws Exception{
+    	File file = new File("d:/Books/21个深度学习项目.pdf");
+    	System.out.println(file.getName());
+    	String fileUid = LucenePDFDocument.createUID(file);
+    	System.out.println(fileUid);
+    	System.out.println("---------------------");
+    }
+    
 }

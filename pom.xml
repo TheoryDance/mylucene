@@ -48,6 +48,20 @@
 			<scope>test</scope>
 		</dependency>
 		
+		<!-- The Apache PDFBox library is an open source Java tool for working with PDF documents. -->
+		<dependency>
+		    <groupId>org.apache.pdfbox</groupId>
+		    <artifactId>pdfbox</artifactId>
+		    <version>2.0.10</version>
+		</dependency>
+		
+		<!-- Apache POI - Java API To Access Microsoft Format Files -->
+		<dependency>
+		    <groupId>org.apache.poi</groupId>
+		    <artifactId>poi</artifactId>
+		    <version>4.0.0</version>
+		</dependency>
+		
 		<!-- lucene jar -->
 		<dependency>
 			<groupId>org.apache.lucene</groupId>
